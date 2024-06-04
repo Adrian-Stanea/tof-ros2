@@ -62,7 +62,7 @@ std::string * parseArgs(int argc, char ** argv)
     right = argnew.substr(argnew.find("=", 0) + 1, argnew.size());
 
     if (std::strcmp(left.c_str(), "ip") == 0)
-      ip = right;
+      ip = std::string("ip:") + right;
     else if (std::strcmp(left.c_str(), "config_file") == 0)
       config_path = right;
     else if (std::strcmp(left.c_str(), "mode") == 0)
