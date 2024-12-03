@@ -1,0 +1,15 @@
+apt-utils
+build-essential
+cmake
+g++-9
+gcc-9
+git
+libgl1-mesa-dev
+libglfw3-dev
+libssl-dev
+wget
+python3-bloom
+python3-rosdep
+fakeroot
+debhelper
+dh-python
