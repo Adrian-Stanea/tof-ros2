@@ -25,7 +25,8 @@ install_glog() {
     cd glog
     mkdir -p build_"${GLOG_VERSION}" && cd build_"${GLOG_VERSION}"
     sudo cmake .. \
-        -DWITH_GFLAGS=off
+        -DWITH_GFLAGS=off \
+        -DCMAKE_INSTALL_PREFIX=/opt/glog
     sudo cmake --build . --target install
     popd || exit
 }
@@ -40,7 +41,8 @@ install_libwebsockets() {
         -DCMAKE_C_COMPILER=gcc-9 \
         -DCMAKE_CXX_COMPILER=g++-9 \
         -DLWS_STATIC_PIC=ON \
-        -DLWS_WITH_SSL=OFF
+        -DLWS_WITH_SSL=OFF \
+        -DCMAKE_INSTALL_PREFIX=/opt/websocket
     sudo cmake --build . --target install
     popd || exit
 }
@@ -53,7 +55,8 @@ install_protobuff() {
     mkdir -p build_"${PROTOBUF_VERSION}" && cd build_"${PROTOBUF_VERSION}"
     sudo cmake ../cmake \
         -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-        -Dprotobuf_BUILD_TESTS=OFF
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -DCMAKE_INSTALL_PREFIX=/opt/protobuf
     sudo cmake --build . --target install
     popd || exit
 }
